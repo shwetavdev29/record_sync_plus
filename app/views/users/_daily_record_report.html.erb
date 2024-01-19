@@ -1,0 +1,28 @@
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th class="active bg-light">Date</th>
+      <th class="active bg-light">Male Count</th>
+      <th class="active bg-light">Female Count</th>
+      <th class="active bg-light">Male Avg Age</th>
+      <th class="active bg-light">Female Avg Age</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% if daily_records.present? %>
+      <% daily_records.each do |daily_record| %>
+        <tr>
+          <td class="text-center"><%= daily_record.date.strftime('%Y-%m-%d') %></td>
+          <td class="text-center"><%= daily_record.male_count %></td>
+          <td class="text-center"><%= daily_record.female_count %></td>
+          <td class="text-center"><%= daily_record.male_avg_age&.round(2) %></td>
+          <td class="text-center"><%= daily_record.female_avg_age&.round(2) %></td>
+        </tr>
+      <% end %>
+    <% else %>
+      <tr>
+        <td colspan="6">No daily_record available</td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

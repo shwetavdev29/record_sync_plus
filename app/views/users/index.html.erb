@@ -1,0 +1,15 @@
+<div class="container-fluid">
+  <div class="d-flex justify-content-center mt-5 gap-4">
+    <div>
+      <div class="bg-light d-flex justify-content-center px-4 py-3 gap-4 flex-row mb-5 rounded">
+        <h3 class="card-header">Total user count :</h3>
+        <span class="bg-primary text-white d-inline-block px-4 d-flex justify-content-center align-items-center rounded"><%= User.all.count %></span>
+      </div>
+      <%= render 'daily_record_report', daily_records: @daily_records %>
+    </div>
+
+    <div>
+      <%= render 'users_table', users: @users %>
+    </div>
+  </div>
+</div>

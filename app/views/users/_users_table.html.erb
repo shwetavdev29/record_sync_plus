@@ -1,0 +1,36 @@
+<%= search_form_for @q do |f| %>
+  <label><%= f.label :name_cont, 'Search by Name', class: "mb-1" %></label>
+  <div class="d-flex gap-4">
+    <%= f.search_field :name_cont, placeholder: 'Search...', class: "form-control" %>
+    <%= f.submit 'Search!', class: "btn btn-primary" %>
+  </div>
+<% end %>
+
+<table class="table table-hover table-bordered mt-5">
+  <thead>
+    <tr>
+      <th class="bg-light">Name</th>
+      <th class="bg-light">Age</th>
+      <th class="bg-light">Gender</th>
+      <th class="bg-light">Created At</th>
+      <th class="bg-light">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% if users.present? %>
+      <% users.each do |user| %>
+        <tr>
+          <td class="align-middle px-3"><%= "#{user.name['first']} #{user.name['last']}" %></td>
+          <td class="align-middle px-3"><%= user.age %></td>
+          <td class="align-middle px-3"><%= user.gender %></td>
+          <td class="align-middle px-3"><%= user.created_at.strftime('%Y-%m-%d %H:%M:%S') %></td>
+          <td class="align-middle px-3">
+            <%= button_to "Destroy", user_path(user), method: :delete, confirm: "Are you sure?",class: "btn btn-danger py-1 px-2" %>
+          </td>
+        </tr>
+      <% end %>
+    <% else %>
+      <h5> No user present </h5>
+    <% end %>
+  </tbody>
+</table>

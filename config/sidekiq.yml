@@ -1,0 +1,8 @@
+fetch_user_records_job:
+  cron: '0 * * * *'
+  class: FetchUserRecordsJob
+
+daily_record_job:
+  cron: '59 23 * * *'
+  class: DailyRecordJob
+
