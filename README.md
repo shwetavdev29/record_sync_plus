@@ -1,24 +1,34 @@
-# README
+# RECORD SYNC PLUS
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Table of Contents
 
-Things you may want to cover:
+- [Technology Stack](#technology-stack)
 
-* Ruby version
+## Technology Stack
 
-* System dependencies
+- **Ruby 3.1.2**: Programming language used in Rails development.
+- **Rails 7**: Backend framework for web development.
+- **StimulusJS**: Handles frontend interactions.
+- **Turbo Streams**: Provides seamless DOM updates.
+- **Postgres**: Database management system.
 
-* Configuration
+## Prerequisites
+  ### Prerequisites
+    - yarn
+    -redis
 
-* Database creation
+  1. Clone the repository:
 
-* Database initialization
+  git clone https://github.com/shwetavdev29/record_sync_plus.git
 
-* How to run the test suite
+  2. `cd record_sync_plus`
 
-* Services (job queues, cache servers, search engines, etc.)
+  3. Run `bundle install`
 
-* Deployment instructions
+  4. Run `bundle exec rails assets:precompile`
 
-* ...
+  5. `setup databse credentials in database.yml`
+
+  6. Run `bin:setup`
+
+  7. Run `bin/dev`
